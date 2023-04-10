@@ -1,6 +1,18 @@
 import streamlit as st
 from langchain import PromptTemplate
 from langchain.llms import OpenAI
+import os
+import yaml
+
+from langchain.agents import (
+    create_json_agent,
+    AgentExecutor
+)
+from langchain.agents.agent_toolkits import JsonToolkit
+from langchain.chains import LLMChain
+from langchain.llms.openai import OpenAI
+from langchain.requests import TextRequestsWrapper
+from langchain.tools.json.tool import JsonSpec
 
 template = """
     Below is an email that may be poorly worded.
