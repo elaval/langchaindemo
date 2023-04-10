@@ -98,7 +98,7 @@ if email_input:
         st.warning('Please insert OpenAI API Key. Instructions [here](https://help.openai.com/en/articles/4936850-where-do-i-find-my-secret-api-key)', icon="⚠️")
         st.stop()
 
-    agent = create_csv_agent(OpenAI(temperature=0), 'gdp-per-capita-growth.csv', verbose=True, openai_api_key=openai_api_key)
+    agent = create_csv_agent(OpenAI(temperature=0, openai_api_key=openai_api_key), 'gdp-per-capita-growth.csv', verbose=True)
     answer = agent.run("how many rows are there?")
     st.write(answer)
 
