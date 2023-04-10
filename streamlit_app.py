@@ -17,10 +17,8 @@ st.header("Analize growth")
 
 openai_api_key = get_api_key()
 
-col1 = st.columns(1)
-
-with col1:
-    st.markdown("Analize data for growth (GDP per capita) for countries in the world [LangChain](https://langchain.com/) and [OpenAI](https://openai.com) and made by \
+ 
+st.markdown("Analize data for growth (GDP per capita) for countries in the world [LangChain](https://langchain.com/) and [OpenAI](https://openai.com) and made by \
                 [@GregKamradt](https://twitter.com/GregKamradt). \n\n View Source Code on [Github](https://github.com/gkamradt/globalize-text-streamlit/blob/main/main.py)")
 
 st.markdown("## Enter Your Question")
