@@ -32,7 +32,7 @@ st.markdown("## Enter Your Question")
 
 
 def get_text():
-    input_text = st.text_area(label="Email Input", label_visibility='collapsed', placeholder="Your Email...", key="email_input")
+    input_text = st.text_area(label="Question Input", label_visibility='collapsed', placeholder="Your question...", key="question_input")
     return input_text
 
 question = get_text()
