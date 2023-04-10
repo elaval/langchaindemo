@@ -1,30 +1,9 @@
 import streamlit as st
 from langchain import PromptTemplate
 from langchain.llms import OpenAI
-import os
-import yaml
 
-from langchain.agents import (
-    create_json_agent,
-    AgentExecutor
-)
-from langchain.agents.agent_toolkits import JsonToolkit
-from langchain.chains import LLMChain
-from langchain.llms.openai import OpenAI
-from langchain.requests import TextRequestsWrapper
-from langchain.tools.json.tool import JsonSpec
-
-with open("openapi.yml") as f:
-    data = yaml.load(f, Loader=yaml.FullLoader)
-json_spec = JsonSpec(dict_=data, max_value_length=4000)
-json_toolkit = JsonToolkit(spec=json_spec)
-
-
-""" json_agent_executor = create_json_agent(
-    llm=OpenAI(temperature=0),
-    toolkit=json_toolkit,
-    verbose=True
-) """
+from langchain.agents import create_csv_agent
+from langchain.llms import OpenAI
 
 template = """
     Below is an email that may be poorly worded.
