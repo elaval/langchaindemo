@@ -14,6 +14,17 @@ from langchain.llms.openai import OpenAI
 from langchain.requests import TextRequestsWrapper
 from langchain.tools.json.tool import JsonSpec
 
+with open("openapi.yml") as f:
+    data = yaml.load(f, Loader=yaml.FullLoader)
+json_spec = JsonSpec(dict_=data, max_value_length=4000)
+json_toolkit = JsonToolkit(spec=json_spec)
+
+json_agent_executor = create_json_agent(
+    llm=OpenAI(temperature=0),
+    toolkit=json_toolkit,
+    verbose=True
+)
+
 template = """
     Below is an email that may be poorly worded.
     Your goal is to:
