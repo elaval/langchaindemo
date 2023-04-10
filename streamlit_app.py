@@ -10,10 +10,11 @@ def get_api_key():
     return input_text
 
 
-openai_api_key = get_api_key()
+
 
 
 st.set_page_config(page_title="Analize growth", page_icon=":robot:")
+openai_api_key = get_api_key()
 st.header("Analize growth")
 
 st.image(image='data.png', width=500)
