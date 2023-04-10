@@ -100,11 +100,10 @@ if email_input:
 
     agent = create_csv_agent(OpenAI(temperature=0), 'gdp-per-capita-growth.csv', verbose=True)
     answer = agent.run("how many rows are there?")
+    st.write(answer)
 
-"""     llm = load_LLM(openai_api_key=openai_api_key)
+    """     llm = load_LLM(openai_api_key=openai_api_key)
 
     prompt_with_email = prompt.format(tone=option_tone, dialect=option_dialect, email=email_input)
 
     formatted_email = llm(prompt_with_email) """
-
-    st.write(answer)
