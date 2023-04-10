@@ -22,8 +22,8 @@ st.image(image='data.png', width=500)
 
 
  
-st.markdown("Analize data for growth (GDP per capita) for countries in the world [LangChain](https://langchain.com/) and [OpenAI](https://openai.com) and made by \
-                [@GregKamradt](https://twitter.com/GregKamradt). \n\n View Source Code on [Github](https://github.com/gkamradt/globalize-text-streamlit/blob/main/main.py)")
+st.markdown("Analize data for growth (GDP per capita) for countries in the world [LangChain](https://langchain.com/) and [OpenAI](https://openai.com) and based on the work by \
+                [@GregKamradt](https://twitter.com/GregKamradt). \n\n View ORIGINAL Source Code on [Github](https://github.com/gkamradt/globalize-text-streamlit/blob/main/main.py)")
 
 st.markdown("## Enter Your Question")
 
