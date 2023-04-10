@@ -98,10 +98,13 @@ if email_input:
         st.warning('Please insert OpenAI API Key. Instructions [here](https://help.openai.com/en/articles/4936850-where-do-i-find-my-secret-api-key)', icon="⚠️")
         st.stop()
 
-    llm = load_LLM(openai_api_key=openai_api_key)
+    agent = create_csv_agent(OpenAI(temperature=0), 'gdp-per-capita-growth.csv', verbose=True)
+    answer = agent.run("how many rows are there?")
+
+"""     llm = load_LLM(openai_api_key=openai_api_key)
 
     prompt_with_email = prompt.format(tone=option_tone, dialect=option_dialect, email=email_input)
 
-    formatted_email = llm(prompt_with_email)
+    formatted_email = llm(prompt_with_email) """
 
-    st.write(formatted_email)
+    st.write(answer)
