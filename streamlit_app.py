@@ -10,12 +10,15 @@ def get_api_key():
     return input_text
 
 
+openai_api_key = get_api_key()
 
 
 st.set_page_config(page_title="Analize growth", page_icon=":robot:")
 st.header("Analize growth")
 
-openai_api_key = get_api_key()
+st.image(image='data.png', width=500)
+
+
 
  
 st.markdown("Analize data for growth (GDP per capita) for countries in the world [LangChain](https://langchain.com/) and [OpenAI](https://openai.com) and made by \
