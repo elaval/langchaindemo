@@ -85,6 +85,12 @@ if len(email_input.split(" ")) > 700:
     st.write("Please enter a shorter email. The maximum length is 700 words.")
     st.stop()
 
+"""     llm = load_LLM(openai_api_key=openai_api_key)
+
+prompt_with_email = prompt.format(tone=option_tone, dialect=option_dialect, email=email_input)
+
+formatted_email = llm(prompt_with_email) """
+
 def update_text_with_example():
     print ("in updated")
     st.session_state.email_input = "Sally I am starts work at yours monday from dave"
@@ -99,11 +105,7 @@ if email_input:
         st.stop()
 
     agent = create_csv_agent(OpenAI(temperature=0, openai_api_key=openai_api_key), 'gdp-per-capita-growth.csv', verbose=True)
-    answer = agent.run("how many rows are there?")
+    answer = agent.run(email_input)
     st.write(answer)
 
-    """     llm = load_LLM(openai_api_key=openai_api_key)
 
-    prompt_with_email = prompt.format(tone=option_tone, dialect=option_dialect, email=email_input)
-
-    formatted_email = llm(prompt_with_email) """
